@@ -6,7 +6,6 @@ function SessionList({ sessions }) {
   if (sessions.length === 0) {
     return <p className="empty">No sessions yet</p>
   }
-
   return (
     <ul className="sessions">
       {sessions.map((session) => (

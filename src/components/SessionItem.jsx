@@ -1,15 +1,14 @@
-import formatTime from '../utils/formatTime.js'
+import { useTheme } from "../ThemeContext";
 
 function SessionItem({ session }) {
-  console.log('render: SessionItem')
+  const [theme] = useTheme();
 
   return (
-    <li className="session light">
-      <strong>{session.topic}</strong>
-      <span>{formatTime(session.seconds)}</span>
-      <span>Distractions: {session.distractions}</span>
+    <li className={`session-item ${theme}`}>
+      <strong>{session.topic}</strong> — {session.seconds} seconds,{" "}
+      {session.distractions} distractions
     </li>
-  )
+  );
 }
 
-export default SessionItem
+export default SessionItem;
